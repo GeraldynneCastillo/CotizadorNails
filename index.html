@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Precios | @THEBARBARANAILS</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jsPDF for direct PDF download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <header class="header text-center">
+        <h1 class="logo-title">@THEBARBARANAILS</h1>
+        <p class="logo-subtitle">Manicure & Nail Art</p>
+    </header>
+
+    <main class="container">
+        <section class="hero text-center">
+            <h2 class="hero-title">Cotiza tu <span>diseño ideal</span></h2>
+            <p class="hero-desc">Selecciona los servicios de la lista oficial y descubre el precio aproximado de tus
+                uñas al instante.</p>
+        </section>
+
+        <div class="calculator-layout">
+            <!-- Columna Izquierda: Opciones -->
+            <div class="options-panel glass-panel">
+
+                <!-- Categoría 1: Servicio Base -->
+                <div class="category-block">
+                    <div class="category-header">
+                        <i class="ph ph-hand-pointing"></i>
+                        <h3>Servicio Principal</h3>
+                    </div>
+                    <p class="category-desc">Elige la base para tus uñas (Los precios son referenciales base)</p>
+
+                    <div class="radio-grid" id="base-services">
+                        <!-- Generado por JS -->
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Categoría 3: Extras / Decoración -->
+                <div class="category-block">
+                    <div class="category-header">
+                        <i class="ph ph-sparkle"></i>
+                        <h3>Extras y Decoración (Por Uña)</h3>
+                    </div>
+                    <p class="category-desc">Añade detalles especiales a tu diseño. Especifica la cantidad de uñas.</p>
+
+                    <div class="checkbox-list" id="extra-services">
+                        <!-- Generado por JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Sticky Summary -->
+            <div class="summary-wrapper">
+                <div class="summary-panel glass-panel sticky">
+                    <div class="summary-header">
+                        <h3>Resumen de Cotización</h3>
+                        <i class="ph ph-receipt"></i>
+                    </div>
+
+                    <div class="summary-body">
+                        <div class="summary-empty" id="summary-empty">
+                            <p>Aún no has seleccionado servicios. Comienza eligiendo un servicio principal.</p>
+                        </div>
+                        <ul class="summary-list" id="summary-list">
+                            <!-- Items generados por JS -->
+                        </ul>
+                    </div>
+
+                    <div class="summary-footer">
+                        <div class="total-row">
+                            <span>Total estimado</span>
+                            <span class="total-price" id="total-price">$0</span>
+                        </div>
+                        <p class="disclaimer">*Los precios son en Pesos Chilenos (CLP) y pueden variar ligeramente según
+                            la complejidad final del diseño en el estudio.</p>
+
+                        <button class="btn-primary" id="btn-pdf">
+                            <i class="ph ph-file-pdf"></i>
+                            Compartir Cotización (PDF)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer text-center">
+        <p>&copy; 2026 @THEBARBARANAILS. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

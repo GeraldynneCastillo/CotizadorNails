@@ -45,6 +45,15 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Fix para todos los dispositivos móviles (Android e iOS):
+   background-attachment: fixed falla en navegadores mobile */
+@media (pointer: coarse) {
+    body {
+        background-attachment: scroll;
+    }
 }
 
 /* Base Utility Classes */

@@ -51,7 +51,7 @@
             padding: 0.85rem 1.5rem;
             border-radius: 50px;
             font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             display: flex;
             align-items: center;
@@ -61,7 +61,10 @@
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
             opacity: 0;
             pointer-events: none;
-            white-space: nowrap;
+            max-width: calc(100vw - 2rem);
+            width: max-content;
+            text-align: center;
+            box-sizing: border-box;
         }
 
         #toast-error.show {
@@ -71,6 +74,7 @@
 
         #toast-error i {
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
     </style>
 </head>

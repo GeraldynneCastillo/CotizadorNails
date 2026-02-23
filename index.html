@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lista de Precios | @THEBARBARANAILS</title>
+    <title>Lista de Precios | @NailsStudio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +39,39 @@
             -ms-user-select: text;
             user-select: text;
         }
+
+        /* Toast de error */
+        #toast-error {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(120%);
+            background: linear-gradient(135deg, #ff6b8a, #ff4d6d);
+            color: #fff;
+            padding: 0.85rem 1.5rem;
+            border-radius: 50px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 8px 30px rgba(255, 77, 109, 0.4);
+            z-index: 9999;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        #toast-error.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        #toast-error i {
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 
@@ -68,7 +101,7 @@
     <div class="bg-glow bg-glow-3"></div>
 
     <header class="header text-center">
-        <h1 class="logo-title">@THEBARBARANAILS</h1>
+        <h1 class="logo-title">@NailsStudio</h1>
         <p class="logo-subtitle">Manicure & Nail Art</p>
     </header>
 
@@ -148,8 +181,14 @@
     </main>
 
     <footer class="footer text-center">
-        <p>&copy; 2026 @THEBARBARANAILS. Todos los derechos reservados.</p>
+        <p>&copy; 2026 @NailsStudio. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Toast de error -->
+    <div id="toast-error">
+        <i class="ph ph-warning-circle"></i>
+        <span>Debes seleccionar al menos un servicio primero</span>
+    </div>
 
     <script src="app.js"></script>
 </body>

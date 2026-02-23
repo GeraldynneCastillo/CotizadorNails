@@ -1,4 +1,4 @@
-// Data Store for Services (@THEBARBARANAILS Pricing)
+// Data Store for Services (@NailsStudio Pricing)
 const servicesData = {
     baseServices: [
         { id: 'esmaltado-permanente', name: 'Esmaltado Permanente', desc: 'Manicure básica', price: 15000 },
@@ -189,7 +189,10 @@ function generatePDF() {
     const hasExtras = Object.values(state.selectedExtras).some(qty => qty > 0);
 
     if (!state.selectedBase && !hasExtras) {
-        alert("Por favor selecciona un servicio base o algún extra primero.");
+        // Mostrar toast bonito en lugar del alert feo
+        const toast = document.getElementById('toast-error');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
         return;
     }
 
@@ -220,7 +223,7 @@ function generatePDF() {
     doc.setTextColor(255, 255, 255);
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(20);
-    doc.text('@THEBARBARANAILS', pageW / 2, 17, { align: 'center' });
+    doc.text('@NailsStudio', pageW / 2, 17, { align: 'center' });
 
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9);
@@ -331,10 +334,10 @@ function generatePDF() {
     doc.setTextColor(180, 180, 180);
     doc.text('Generado el: ' + fecha, pageW / 2, y, { align: 'center' });
     y += 5;
-    doc.text('Te esperamos! @THEBARBARANAILS', pageW / 2, y, { align: 'center' });
+    doc.text('Te esperamos! @NailsStudio', pageW / 2, y, { align: 'center' });
 
     // ─── DESCARGAR ───────────────────────────────────────
-    doc.save('Cotizacion-TheBarbaraNails.pdf');
+    doc.save('Cotizacion-NailsStudio.pdf');
 
     // Limpiar calculadora después de descargar
     resetCalculator();
